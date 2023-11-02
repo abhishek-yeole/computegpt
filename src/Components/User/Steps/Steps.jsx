@@ -133,7 +133,7 @@ function Steps() {
             </div>
             <div className='llm-output-images'>
               <strong>OUTPUT: </strong><br />
-              {imageUrls.slice(2, -1).map((url, index) => (
+              {imageUrls.map((url, index) => (
                 <div key={index} className='single-output-llm'><strong><Icon icon="raphael:arrowright" /></strong>{parse(`<img className='image-config-steps' src="${url}" alt="${index}" />`)}</div>
               ))}
             </div>
