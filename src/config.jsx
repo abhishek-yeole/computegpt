@@ -1,18 +1,18 @@
 const config = {
-    apiUrlLogin: 'https://computebotapi.vercel.app/login',
-    apiUrlLoginCheck: 'https://computebotapi.vercel.app/logincheck',
-    apiUrlRegister: 'https://computebotapi.vercel.app/register',
-    apiUrlVerify: 'https://computebotapi.vercel.app/verify',
-    apiUrlForgot: 'https://computebotapi.vercel.app/forgot',
-    apiUrlReset: 'https://computebotapi.vercel.app/reset',
-    apiUrlLogout: 'https://computebotapi.vercel.app/logout',
-    apiUrlVerifyForgot: 'https://computebotapi.vercel.app/verifyforgot',
-    apiUrlFeedback: 'https://computebotapi.vercel.app/feedback',
+    apiUrlLogin: process.env.‎REACT_APP_LOGIN_API_URL,
+    apiUrlLoginCheck: process.env.REACT_APP_REGISTER_API_URL,
+    apiUrlRegister: process.env.REACT_APP_VERIFY_API_URL,
+    apiUrlVerify: process.env.REACT_APP_FORGOT_API_URL,
+    apiUrlForgot: process.env.REACT_APP_RESET_API_URL,
+    apiUrlReset: process.env.REACT_APP_LOGINCHECK_API_URL,
+    apiUrlLogout: process.env.REACT_APP_LOGOUT_API_URL,
+    apiUrlVerifyForgot: process.env.REACT_APP_VERIFYFORGOT_API_URL,
+    apiUrlFeedback: process.env.REACT_APP_FEEDBACK_API_URL,
 
-    apiUrlWolframSteps: 'https://computebotapi.vercel.app/wolfram-step-by-step',
-    apiUrlWolframSpoken: 'https://computebotapi.vercel.app/wolfram-Speech',
-    apiUrlWolframLLM: 'https://computebotapi.vercel.app/wolfram-LLM',
-    apiUrlWolframChat: 'https://computebotapi.vercel.app/wolfram-conversation'
+    apiUrlWolframSteps: process.env.REACT_APP_WOLFRAM_STEP_API_URL,
+    apiUrlWolframSpoken: process.env.REACT_APP_WOLFRAM_SPEECH_API_URL,
+    apiUrlWolframLLM: process.env.REACT_APP_WOLFRAM_LLM_API_URL,
+    apiUrlWolframChat: process.env.REACT_APP_WOLFRAM_CONVERSATION_API_URL
 };
   
 export default config;
