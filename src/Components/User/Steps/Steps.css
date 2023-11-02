@@ -1,0 +1,85 @@
+.steps-body {
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px); 
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 8px;
+}
+
+.query-input-steps {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 30%;
+    padding: 6px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.image-config-steps {
+    height: inherit;
+}
+
+.info-steps-header {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info-steps-context {
+    text-align: center;
+    font-size: small;
+    color: grey;
+    padding: 5px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.main-input-steps {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+    justify-content: center;
+    align-content: center;
+}
+
+.parameters-steps {
+    padding: 10px;
+    width: 95%;
+}
+
+.output-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(136, 250, 158, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 5px;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 900px){
+    .steps-body {
+        flex-direction: column;
+        width: 100%;
+        overflow: scroll;
+        padding: 6px;
+    }
+    .query-input-steps {
+        width: 100%;
+        margin: 5px auto;
+    }
+    .output-steps {
+        width: 100%;
+        margin: 5px auto;
+    }
+}

@@ -1,0 +1,140 @@
+.llm-body {
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px); 
+    box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 8px;
+}
+
+.query-input-llm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 30%;
+    padding: 6px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.info-llm-header {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info-llm-context {
+    text-align: center;
+    font-size: small;
+    color: grey;
+    padding: 5px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.main-input-llm {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+    justify-content: center;
+    align-content: center;
+}
+
+.parameters-llm {
+    padding: 10px;
+    width: 95%;
+}
+
+.output-llm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(136, 250, 158, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 70%;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 5px;
+    overflow: scroll;
+}
+
+.llm-output-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+}
+
+.initial-load {
+    border: 4px dashed rgba(0, 0, 0, 0.65);
+    border-radius: 12px;
+    width: 30vw;
+    height: 25vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(61, 61, 61);
+}
+
+.output-block {
+    width: 100%;
+}
+
+.image-config {
+    width: 100%;
+    height: inherit;
+}
+
+.llm-output-images {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(128, 255, 212, 0.1);
+    max-width: 70vw;
+}
+
+.single-output-llm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.llm-interface-user {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 900px){
+    .llm-body {
+        flex-direction: column;
+        width: 100%;
+        overflow: scroll;
+        padding: 6px;
+    }
+    .query-input-llm {
+        width: 100%;
+        margin: 5px auto;
+    }
+    .output-llm {
+        width: 100%;
+        margin: 5px auto;
+    }
+    .initial-load {
+        width: 80vw;
+        font-size: large;
+    }
+}
