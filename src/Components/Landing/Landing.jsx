@@ -66,7 +66,7 @@ const Landing = () => {
             <Header />
             {!bgImage ? (
                 <div className='back-3d' id='about'>
-                    <Spline scene="https://draft.spline.design/81ZY1THwOmsaia0q/scene.splinecode" style={{width: '100vw', height: '100vh'}} />
+                    <Spline scene="https://prod.spline.design/ZENixsBSWgbTPcC4/scene.splinecode" style={{width: '100vw', height: '100vh'}} />
                 </div>
             ) : (
                 <div className='back-3d-mobile' id='about'>
