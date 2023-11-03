@@ -25,22 +25,10 @@ function LLM() {
   const [plotWidth, setPlotWidth] = useState(500);
   const [mag, setMag] = useState(1.00);
   const [units, setUnits] = useState('metric');
-  const [locationData, setLocationData] = useState(null);
   const [imageURLs, setImageURLs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [disable, setDisable] = useState(false);
-  
-  useEffect(() => {
-    fetch('http://ip-api.com/json')
-      .then((response) => response.json())
-      .then((data) => {
-        setLocationData(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching location data:', error);
-      });
-  }, []);
 
   const handleSubmit = async () => {
     setLoaded(false);
@@ -52,7 +40,7 @@ function LLM() {
         headers: {
         'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query, maxChars, width, maxWidth, plotWidth, mag, units, ip: locationData.query, latLong: `${locationData.lat}, ${locationData.lon}` }),
+        body: JSON.stringify({ query, maxChars, width, maxWidth, plotWidth, mag, units }),
     });
 
       // const data = await response.json();
