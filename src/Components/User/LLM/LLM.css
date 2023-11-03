@@ -137,4 +137,7 @@
         width: 80vw;
         font-size: large;
     }
+    .single-output-llm {
+        width: 100%;
+    }
 }

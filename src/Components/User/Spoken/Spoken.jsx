@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SpeechToText from './SpeechToText';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -20,40 +20,32 @@ import config from '../../../config';
 const Spoken = () => {
   const [finalText, setFinalText] = useState("");
   const [responseText, setResponseText] = useState("Talk with me!!");
-  const [locationData, setLocationData] = useState(null);
   const [voiceName, setVoiceName] = useState("Google UK English Male");
   const [pitch, setPitch] = useState(1.5);
   const [rate, setRate] = useState(1.5);
+  const [disable, setDisable] = useState(false);
 
   const handleFinalText = (text) => {
     setFinalText(text);
   };
 
-  useEffect(() => {
-    fetch('http://ip-api.com/json')
-      .then((response) => response.json())
-      .then((data) => {
-        setLocationData(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching location data:', error);
-      });
-  }, []);
-
   const handleSubmit = async () => {
+    setDisable(true);
+    setResponseText("Generating...");
     try {
       const response = await fetch( config.apiUrlWolframSpoken, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query: finalText, ip: locationData.query, latLong: `${locationData.lat}, ${locationData.lon}` }),
+        body: JSON.stringify({ query: finalText }),
     });
 
       const data = await response.json();
       if (data.success) {
         setResponseText(data.response);
         speak(data.response);
+        setDisable(false);
       }
 
     } catch (error) {
@@ -91,7 +83,7 @@ const Spoken = () => {
           <Icon icon="material-symbols:input" style={{fontSize: '32px'}}/>
           <TextField id="filled-multiline-flexible" label="Speech" multiline size='small' maxRows={4} fullWidth variant="filled" value={finalText} onChange={(e) => {setFinalText(e.target.value)}} required />  
         </Box><br/>
-        <Button variant="contained" onClick={handleSubmit} startIcon={<Icon icon="mdi:thunder" />}><b>Generate</b></Button>
+        <Button variant="contained" disabled={disable} onClick={handleSubmit} startIcon={<Icon icon="mdi:thunder" />}><b>Generate</b></Button>
       </div>
       <div className='parameters-spoken'>
         <Accordion>

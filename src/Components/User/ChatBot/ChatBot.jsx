@@ -9,7 +9,6 @@ import config from "../../../config";
 const ChatBot = () => {
   const [conversation, setConversation] = useState([]);
   const [message, setMessage] = useState("");
-  const [locationData, setLocationData] = useState(null);
   const [conversationID, setConversationID] = useState(
     localStorage.getItem("conversationID") || ""
   );
@@ -18,14 +17,6 @@ const ChatBot = () => {
 
   useEffect(() => {
     localStorage.setItem("conversationID", conversationID);
-    fetch('http://ip-api.com/json')
-      .then((response) => response.json())
-      .then((data) => {
-        setLocationData(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching location data:', error);
-      });
   }, [conversationID]);
 
   const saveConversationToLocalStorage = (updatedConversation) => {
@@ -50,7 +41,7 @@ const ChatBot = () => {
           headers: {
           'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ query: message, conversationID, ip: locationData.query, latLong: `${locationData.lat},${locationData.lon}` }),
+          body: JSON.stringify({ 'query': message, conversationID }),
       });
 
     const data = await response.json();
