@@ -1,4 +1,5 @@
 [![ComputeGPT](https://i.ibb.co/WnSy5n2/Road-Sense-removebg-preview.png)](https://computegpt.vercel.app/)
+
 # ComputeGPT
 ### Welcome to ComputeGPT - Your Computational Companion.
 
@@ -28,6 +29,7 @@ At ComputeGPT, our mission is to simplify complex mathematical problem-solving f
 ComputeGPT is hosted using Vercel.
 
 _[ComputeGPT](https://computegpt.vercel.app/)_
+
 
 ## Input Constraints
 
