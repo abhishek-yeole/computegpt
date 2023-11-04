@@ -75,7 +75,7 @@ const Login = () => {
 
     return (
         <div>
-            <CheckLogin redirect={'/null'} trueRedirect={'/lobby'} sendDataToParent={receiveDataFromChild}/>
+            <CheckLogin redirect={'/null'} trueRedirect={'/user'} sendDataToParent={receiveDataFromChild}/>
             <Header />
             <br /><br /><br /><br />
             {bgImage ? (
